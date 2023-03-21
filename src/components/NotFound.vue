@@ -28,12 +28,14 @@
     font-size: 62px;
     font-weight: 600;
     color: red;
+    margin: 20px 0;
   }
 
   .error1{
     font-size: 15px;
     font-weight: bold;
     color: seashell;
+    margin: 0;
   }
   .btn{
     background-color: #333;
@@ -44,5 +46,14 @@
     text-decoration: none;
     font-size: 10px;
     cursor: pointer;
+    margin: 30px;
+  }
+
+  @media screen and (max-width: 1024px){
+    .btn,
+    .error,
+    .error1{
+        margin: 30px 0;
+    }
   }
   </style>

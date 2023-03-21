@@ -45,4 +45,15 @@
   box-shadow: 4px 4px 0px 0px #000;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1024px) {
+  .card {
+    font-size: 16px;
+    padding: 10px;
+  }
+  .card .section{
+    margin: 10px 20px;
+    padding: 5px;
+  }
+}
 </style>

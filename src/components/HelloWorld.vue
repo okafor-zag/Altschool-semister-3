@@ -128,4 +128,20 @@ input{
   background-color: #ffffff5b;
   color: #000;
 }
+
+@media screen and (max-width: 1024px){
+  .increase-btn,
+  .decrease-btn{
+    width: 100px;
+    font-size: 10px;
+  padding: 10px;
+  margin: 5px;
+  }
+
+  .reset-btn{
+    font-size: 20px;
+  padding: 10px;
+  margin: 15px
+  }
+}
 </style>
