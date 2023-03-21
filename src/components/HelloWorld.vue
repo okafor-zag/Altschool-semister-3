@@ -1,58 +1,131 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="container">
+    <h1>Count</h1>
+    <span>{{ count }}</span>
+    <button class="reset-btn" @click="reset">Reset</button>
+    <input type="number" placeholder="Set Counter" v-model="value" />
+    <button class="set-value" @click="setValue">Set Value</button>
+    <button class="increase-btn" @click="increment">Increment</button>
+    <button class="decrease-btn" @click="decrement">Decrement</button>
+    
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  data() {
+    return {
+      value: 0
+    }
+  },
+  computed: {
+    ...mapState({
+      count: state => state.count,
+      anotherCount: state => state.anotherCount
+    })
+  },
+  methods: {
+    ...mapActions([
+      'setCountAction',
+      'setAnotherCountAction'
+    ]),
+    increment() {
+      this.setCountAction(this.count + 1)
+    },
+    decrement() {
+      this.setCountAction(this.count - 1)
+    },
+    reset() {
+      this.setCountAction(0)
+    },
+    setValue() {
+      this.setCountAction(this.value)
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #3a5b7c ;
+  color: #fff;
+  font-size: 20px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.container h1 {
+  font-size: 60px;
+  text-shadow: 4px 3px 5px rgb(20, 2, 2);
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+span{
+  font-size: 250px;
+  padding: 5px;
+  text-shadow: 4px 3px 5px rgb(20, 2, 2);
 }
-a {
-  color: #42b983;
+
+input{
+  font-size: 30px;
+  padding: 5px;
+  margin: 15px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  box-shadow: 5px 6px 10px rgba(7, 7, 7, 0.2);
+}
+.set-value{
+  font-size: 20px;
+  padding: 15px;
+  margin: 20px;
+  width: 350px;
+  box-shadow: 3px 6px 10px rgba(7, 7, 7, 0.2);
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #ffffffcb;
+  color: #000;
+}
+
+.increase-btn{
+  font-size: 15px;
+  padding: 15px;
+  margin: 10px;
+  width: 250px;
+  box-shadow: 3px 6px 10px rgba(7, 7, 7, 0.2);
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #ffffff5b;
+  color: #000;
+  position: absolute;
+  left: 10px;
+}
+
+.decrease-btn{
+  font-size: 15px;
+  padding: 15px;
+  margin: 10px;
+  width: 250px;
+  box-shadow: 3px 6px 10px rgba(7, 7, 7, 0.2);
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #ffffff5b;
+  color: #000;
+  position: absolute;
+  right: 10px;
+}
+.reset-btn{
+  font-size: 25px;
+  padding: 15px;
+  margin: 20px;
+  width: 180px;
+  box-shadow: 3px 6px 10px rgba(7, 7, 7, 0.2);
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #ffffff5b;
+  color: #000;
 }
 </style>
