@@ -37,7 +37,7 @@
     text-align: center;
     margin: 30px 0;
     text-shadow: 5px 6px 9px #000;
-    color: #2c3e50;;
+    color: whitesmoke;
 }
 
 .card .section {
