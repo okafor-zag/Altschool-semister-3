@@ -1,6 +1,7 @@
 <template>
     <div>
   <div class="card">
+    <h2 class=" welcome">Welcome to johnson's simple Counter App</h2>
     <p class="section">
       Welcome to our counter app! We're excited to help you keep track of
       anything and everything you need to count. Whether you're tracking
@@ -24,22 +25,31 @@
 <style>
 .card {
   background-color: #3a5b7c;
+  min-height: 100%;
   color: #fff;
   padding: 30px;
   font-size: 20px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
+.welcome{
+    font-size: 40px;
+    text-align: center;
+    margin: 30px 0;
+    text-shadow: 5px 6px 9px #000;
+    color: #2c3e50;;
+}
+
 .card .section {
-  margin: 20px 50px;
-  padding: 10px;
+  margin: 20px 60px;
+  padding: 40px 0;
 }
 .counter-link {
   background-color: #333;
   color: #fff;
   font-size: 20px;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 20px;
+  margin: 20px 0;
   border: none;
   border-radius: 5px;
   box-shadow: 4px 4px 0px 0px #000;
@@ -49,11 +59,22 @@
 @media screen and (max-width: 1024px) {
   .card {
     font-size: 16px;
-    padding: 10px;
   }
+
+  .welcome{
+    font-size: 30px;
+    margin: 20px 0;
+  }
+
+
   .card .section{
-    margin: 10px 20px;
-    padding: 5px;
+    margin: 50px 0;
+    padding: 5px 1px;
+  }
+
+  .counter-link{
+    margin: 10px 0;
+    padding: 10px;
   }
 }
 </style>

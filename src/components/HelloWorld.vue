@@ -65,8 +65,8 @@ export default {
 }
 
 span{
-  font-size: 250px;
-  padding: 5px;
+  font-size: 200px;
+  padding: 3px;
   text-shadow: 4px 3px 5px rgb(20, 2, 2);
 }
 
@@ -137,6 +137,27 @@ input{
   padding: 10px;
   margin: 5px;
   }
+
+  span{
+    font-size: 150px;
+    padding: 0;
+    margin: 0;
+  }
+
+  input{
+    font-size: 20px;
+  padding: 5px;
+  margin: 10px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  }
+.set-value{
+  font-size:15px;
+  font-size: 15px;
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+}
 
   .reset-btn{
     font-size: 20px;
