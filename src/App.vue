@@ -27,6 +27,13 @@ export default {
 </script>
 
 <style>
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #3a5b7c ;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   /* -webkit-font-smoothing: antialiased;
